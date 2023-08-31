@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node ./dist/index.js",
-    "dev": "rm -rf ./dist && nodemon index.ts",
+    "dev": "rm -rf ./dist && env-cmd nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
+    "@types/sequelize": "^4.28.15",
     "@types/uuid": "^9.0.3",
     "env-cmd": "^10.1.0",
     "nodemon": "^3.0.1"

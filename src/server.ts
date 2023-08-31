@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import routes from "./routes";
 
 const SHUTDOWN_TIMEOUT = process.env.SHUTDOWN_TIMEOUT || 500;

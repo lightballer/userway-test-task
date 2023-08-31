@@ -1,20 +1,21 @@
-import { Router } from "express";
+import { Router, Request, Response } from "express";
+import { generateShortURL } from "src/services/url.service";
 
 const router = Router();
 
-const generateShortURL = () => {};
-
-router.post("/shorten", (req, res) => {
+router.post("/shorten", (req: Request, res: Response) => {
   const originalURL = req.body.url;
   const shortURL = generateShortURL();
 
   // db call
 
-  res.json({ url: `http://localhost:3000/${shortURL}` });
+  const host = "http://localhost:3000";
+
+  res.json({ url: `${host}/${shortURL}` });
 });
 
 // Resolve a short URL
-router.get("/:shortURL", (req, res) => {
+router.get("/:shortURL", (req: Request, res: Response) => {
   const shortURL = req.params.shortURL;
   const originalURL = ""; // get url from db
 
